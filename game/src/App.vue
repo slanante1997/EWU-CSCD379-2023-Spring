@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="WA State Logo" class="logo" src="@/assets/WA_state.jpg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="US States Trivia" />
+      <HelloWorld msg="US States Trivia!" />
 
       <nav>
         <RouterLink to="/">
