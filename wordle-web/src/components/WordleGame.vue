@@ -8,7 +8,21 @@
       >Wordle of the Day
       <span v-if="wordOfTheDayDate"> <br />{{ wordOfTheDayDate.toLocaleDateString() }}</span>
     </span>
-    <span v-else>Wordle Mind Bender</span>
+    <span v-else>Wordle Clone</span>
+    <p v-if="showMessage" @click="showMessage = false" style="font-size: 0.5em; cursor: pointer">
+      Welcome to my sample website of New York Times'
+      <a
+        href="https://www.nytimes.com/games/wordle/index.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Wordle</a
+      >
+      game!
+    </p>
+    <p v-if="showMessage" @click="showMessage = false" style="font-size: 0.3em; cursor: pointer">
+      This application utilizes Vue.js, ASP.NET, and Azure. I am a Fullstack Web Developer, and a
+      recent graduate eager to work in software development!
+    </p>
   </div>
 
   <GameBoard :game="game" />
@@ -82,6 +96,7 @@ const overlay = ref(true)
 const showScoreDialog = ref(false)
 const lastGameResult: Ref<GameResult> = ref({} as GameResult)
 const wordOfTheDayDate: Ref<Date | null> = ref(null)
+const showMessage = ref(true)
 
 const props = defineProps<{
   isWordOfTheDay: boolean
